@@ -59,6 +59,16 @@ The two C sources are **deliberately distinct, not a hierarchy** — `c-gnu` (ow
 space indentation) and `c-linux` (K&R braces, tab-8) are genuinely opposite conventions with
 no shared core. Each warns against composing both.
 
+### Framework style — compose alongside your language source
+
+For a component framework, compose the framework source **and** the language source it is
+written in (typically `throughline-typescript`), so your components are grounded in both.
+
+| Guide | Repo | Namespace | Rules / sections | Licence |
+|---|---|---|---|---|
+| Airbnb React/JSX Style Guide | [throughline-react](https://github.com/rhodium-org/throughline-react) | `react` | 36 / 15 | MIT |
+| Angular Style Guide (official) | [throughline-angular](https://github.com/rhodium-org/throughline-angular) | `angular` | 36 / 9 | CC BY 4.0 |
+
 ### Front-end concern — three alternatives, pick one
 
 Offered as choices by priority, not a hierarchy; composable together but each stands alone.
@@ -74,6 +84,18 @@ Offered as choices by priority, not a hierarchy; composable together but each st
 | Guide | Repo | Namespace | Rules / sections | Licence |
 |---|---|---|---|---|
 | The Twelve-Factor App | [throughline-backend](https://github.com/rhodium-org/throughline-backend) | `backend` | 46 / 12 | CC BY-SA 3.0 |
+
+### Build / container concern — how the image is built
+
+| Guide | Repo | Namespace | Rules / sections | Licence |
+|---|---|---|---|---|
+| Docker Dockerfile best practices | [throughline-docker](https://github.com/rhodium-org/throughline-docker) | `docker` | 33 / 16 | Apache-2.0 |
+
+`throughline-docker` governs how a container image is **built** (the vendor-neutral Docker
+best-practice standard). It is distinct from
+[`throughline-local-cluster-cicd`](https://github.com/rhodium-org/throughline-local-cluster-cicd),
+which is one estate's *house standard* for how images are **delivered** to its k3s cluster —
+compose whichever fits, or both.
 
 ## How each source is modelled
 
@@ -94,8 +116,8 @@ repo (e.g. `v2026-08`); a consumer pins the ref it wants. Older editions live on
 
 ## Provenance & licensing
 
-Every source reproduces its guide's rule text under **that guide's own open licence** (CC BY,
-CC BY-SA, GFDL, GPL, or public domain — none proprietary), noted per row above and in each
-repo's `NOTICE`. The **structure and tooling** of these repositories are Apache-2.0 (see
+Every source reproduces its guide's rule text under **that guide's own open licence** (MIT,
+Apache-2.0, CC BY, CC BY-SA, GFDL, GPL, or public domain — none proprietary), noted per row
+above and in each repo's `NOTICE`. The **structure and tooling** of these repositories are Apache-2.0 (see
 [LICENSE](LICENSE)), authored by Dr Henry J Grech-Cini. The reproduced rule text remains the
 work of its respective authors.
