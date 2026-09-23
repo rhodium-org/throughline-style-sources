@@ -3,7 +3,7 @@
 A front door to a family of **[throughline](https://pypi.org/project/throughline/) sources**
 — published engineering style guides reverse-engineered into standalone, grounded
 requirements graphs that a consuming project composes with
-[throughline-compose](https://github.com/rhodium-org/throughline-compose).
+`tl` from [throughline](https://pypi.org/project/throughline/) 3.11.0 or later.
 
 Each source is its own repository: a directory of small YAML items with permanent UIDs,
 validated by `tl check`. A consumer imports a source under a namespace it chooses and
@@ -37,8 +37,8 @@ links:
   type: satisfies
 ```
 
-`tl-compose check` resolves the references; bare `tl check` fails fast and points you at
-`tl-compose`.
+`tl check` in the consuming project composes these sources and resolves the references.
+A `tl` older than 3.11.0 reports them as `namespace-unresolved`.
 
 ## The sources
 
